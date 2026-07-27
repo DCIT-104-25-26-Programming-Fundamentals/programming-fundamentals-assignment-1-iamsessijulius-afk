@@ -1,4 +1,21 @@
-# =============================================================================
+def your_grade(score):
+ if score > 100:
+    return False
+ if score < 0:
+    return False
+ if score >= 80:
+    return "Grade A"
+ elif score >= 70:
+    return "Grade B"
+ elif score >= 50:
+   return "Grade C"
+ elif score < 50:
+   return "Grade F"
+
+score = int(("Enter student score (0-100): "))
+result = your_grade(score)
+print(result)
+  # =============================================================================
 # PROGRAMMING FUNDAMENTALS — Assignment 2
 # Topic: Conditional Logic (if / elif / else) and Functions
 # =============================================================================
