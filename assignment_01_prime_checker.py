@@ -1,3 +1,15 @@
+def is_prime(num):
+  if num < 2:
+    return False
+  for i in range(2,num):
+    if num % i == 0:
+      return False
+    return True
+    number = int(input("Enter a number: "))
+    if is_prime(number):
+      print(str(number) + " is a prime number.")
+    else:
+      print(str(number) + " is not a prime number.")
 # =============================================================================
 # PROGRAMMING FUNDAMENTALS — Assignment 1
 # Topic: Conditional Logic, Loops, and Functions
