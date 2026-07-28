@@ -58,5 +58,62 @@
 #
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
-# =============================================================================
+def read_matrix(rows, cols):
+  matrix = []
+  for i in range(rows):
+    row = [int(x)for x in input(f"enter row {i + 1}: ").split()]
+    matrix.append(row)
+  return matrix
+
+def print_matrix(matrix):
+  for row in matrix:
+    print(*row)
+
+def transpose_matrix(matrix):
+  rows = len(matrix)
+  cols = len(matrix[0])
+  result = [[0] * rows for _ in range(cols)]
+  for i in range(rows):
+    for j in range(cols):
+      result[j][i] = matrix[i][j]
+  return result
+
+def add_matrices(A, B):
+  rows = len(A)
+  cols = len(A[0])
+  result = [[0] * cols for _ in range(rows)]
+  for i in range(rows):
+    for j  in range(cols):
+      result[i][j] = A[i][j] + B[i][j]
+
+  return result
+
+def multiply_matrices(A, B):
+  rows_A = len(A)
+  cols_A = len(A[0])
+  cols_B = len(B[0])
+  result = [[0] * cols_B for _ in range(rows_A)]
+  for i in range(rows_A):
+    for j in range(cols_B):
+      for k in range(cols_A):
+        result[i][j] += A[i][k] * B[k][j]
+  return result
+
+r = int(input("Enter number of rows: "))
+c = int(input("Enter numbber of columns: "))
+A = read_matrix(r, c)
+print_matrix(transpose_matrix(A))
+
+r = int(input("Enter number of rows: "))
+c = int(input("Enter numbber of columns: "))
+A = read_matrix(r, c)
+B = read_matrix(r, c)
+print_matrix(add_matrices(A, B))
+
+r_A = int(input("Enter rows for Matrix A: "))
+c_A = int(input("Enter cols for A / rows for B: "))
+c_B = int(input("Enter cols for Matrix B: "))
+A = read_matrix(r_A, c_A)
+B = read_matrix(c_A, c_B)
+print_matrix(multiply_matrices(A, B))
 
