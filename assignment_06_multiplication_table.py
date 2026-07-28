@@ -53,5 +53,32 @@
 #
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
-# =============================================================================
+def one_table():
+  num = int(input("Enter a number: "))
+  if num <=0:
+    print("Error")
+    return
+
+  print(f"Multiplicatiion Table for {num}:")
+  for i in range(1, 13):
+    print(f"{num} x {i} = {num * i}")
+
+def table_to_n():
+  n = int(input("Enter a number N:"))
+  if n <= 0:
+    print("Error")
+    return
+
+  for num in range(1, n + 1):
+    print(f"Multiplication Table for {num} to {n}:")
+    for i in range(1, 13):
+      print(f"{num} x {i} = {num * i}")
+
+    if num < n:
+      print("---------------------")
+
+one_table()
+print()
+table_to_n()
+                                
 
