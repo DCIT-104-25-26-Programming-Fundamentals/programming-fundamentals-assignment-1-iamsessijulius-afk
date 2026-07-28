@@ -46,9 +46,9 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 def your_grade(score):
  if score > 100:
-    return False
+    return "Error: Score cannot be greater than 100."
  if score < 0:
-    return False
+    return "Error: Score cannot be less than 0."
  if score >= 80:
     return "Grade A"
  elif score >= 70:
@@ -58,6 +58,6 @@ def your_grade(score):
  elif score < 50:
    return "Grade F"
 
-score = int(("Enter student score (0-100): "))
+score = int(input("Enter student score (0-100): "))
 result = your_grade(score)
 print(result)
