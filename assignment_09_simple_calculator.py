@@ -66,5 +66,77 @@
 #
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
-# =============================================================================
+def add(a, b):
+  return a + b
 
+def subtract(a, b):
+  return a - b
+
+def multiply(a, b):
+  return a * b
+
+def divide(a, b):
+  if b == 0:
+    return "Error: Cannot divide by zero."
+  return round(a / b, 2)
+
+def modulus(a, b):
+  if b == 0:
+    return "Error: Cannot divide by zero."
+  return a % b
+
+def power(a, b):
+  return a ** b
+
+def show_menu():
+  print("========================")
+  print("   SIMPLE CALCULATOR    ")
+  print("========================")  
+  print("1. Addition")
+  print("2. Subraction")
+  print("3. Multiplication")
+  print("4. Division")
+  print("5. Modulus")
+  print("6. Exponentiation")
+  print("7. Quit")
+
+def get_numbers():
+  a = float(input("Enter first number : "))
+  b = float(input("Enter second number: "))
+  a = int(a) if a.is_integer() else a
+  b = int(b) if b.is_integer() else b
+  return a, b
+
+def main():
+  while True:
+    show_menu()
+    choice = input("Select an operation : ")
+    if choice == "7":
+          print("Goodbye!")
+          break
+    if choice in ["1", "2", "3", "4", "5", "6"]:
+      a, b = get_numbers()
+      if choice == "1":
+        print(f"Result : {a} + {b}= {add(a, b)}")
+      elif choice == "2":
+        print(f"Result : {a} - {b}= {subtract(a, b)}")  
+      elif choice == "3":
+        print(f"Result : {a} * {b}= {multiply(a, b)}")  
+      elif choice == "4":
+        res = divide(a, b)
+        if isinstance(res, str):
+          print(f"{res}")
+        else:
+          print(f"Result : {a} / {b}= {res}") 
+      elif choice == "5":
+        res = modulus(a, b)
+        if isinstance(res, str):
+          print(f"{res}")
+        else:
+          print(f"Result : {a} % {b}= {res}") 
+      elif choice == "6":
+        print(f"Result : {a} ** {b}= {power(a, b)}")
+    else:
+      print("Invalid choice. Please select from 1 to 7.")
+
+  main()
